@@ -1,0 +1,302 @@
+* {
+      box-sizing: border-box;
+      font-family: "Roboto Slab", serif;
+      padding: 0;
+      margin: 0;
+}
+body {
+      background-color: hsla(0, 0, 6%);
+      overflow: hidden;
+}
+a {
+      text-decoration: none;
+}
+#header{
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 99;
+}
+.blur-header{
+      &::after{
+            content: ' ';
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background-color: hsla(0, 52%, 6%, 0.2);
+            backdrop-filter: blur(12px);
+      }
+}
+// navbar for mobile and desktop
+.navbar.desktop-nav,
+.mobile-nav {
+      display: none;
+      @media screen and (min-width: 992px) {
+            display: block;
+      }
+      .navbar-nav {
+            gap: 30px;
+            .nav-item {
+                  .nav-link {
+                        color: #fff;
+                        transition: 0.5s;
+                        &:hover {
+                              color: rgb(124, 81, 1) !important;
+                        }
+                  }
+            }
+      }
+}
+.mobile-nav .offcanvas {
+      background-color: hsl(0, 0%, 6%, 0.2);
+      backdrop-filter: blur(10px);
+
+      .offcanvas-body {
+            img {
+                  position: absolute;
+                  width: 70px;
+            }
+
+            .img.bread-2 {
+                  top: 20%;
+                  right: 22%;
+            }
+
+            .img.bread-3 {
+                  bottom: 30%;
+                  left: 20%;
+            }
+      }
+}
+.navbar-brand {
+      color: rgb(124, 81, 1) !important;
+      font-family: "Dancing Script", cursive;
+}
+.is-active{
+      color: #7c5101;
+}
+// Section-bg
+.home-bg,
+.shadow-bg,
+.visit-shadow-bg,
+.visit-us-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+}
+.home-bg,
+.visit-us-bg {
+      object-fit: cover;
+      object-position: center;
+}
+.shadow-bg {
+      background: linear-gradient(180deg, hsla(0, 0, 0, 0) 0, hsla(0, 0, 6%) 100%);
+}
+.visit-shadow-bg {
+      background: linear-gradient(180deg, hsla(0, 0, 6%) 0%, hsla(0, 0, 4%, .1%) 50%, hsl(0, 0%, 6%) 100%);
+}
+
+// Section-headings
+.section-heading {
+      font-family: "Dancing Script", cursive;
+      padding: 20px 0 50px 0;
+}
+
+.bread-4 {
+      width: 100px;
+      top: 80px;
+      right: 285px;
+}
+.bread-1 {
+      width: 100px;
+      top: 70%;
+      left: 40%;
+}
+h3.product-Name {
+      color: #7c5101;
+      font-family: "Dancing Script", cursive;
+}
+h1 {
+      font-size: 70px;
+      font-family: "Dancing Script", cursive;
+
+      @media screen and (max-width: 480px) {
+            font-size: 50px;
+      }
+
+      @media (min-width: 767px) and (max-width: 995px) {
+            font-size: 60px;
+      }
+}
+.text-brown {
+      color: #7c5101;
+}
+// buttons
+.btn-brown {
+      background-color: rgb(124, 81, 1);
+      color: #000;
+
+      &:hover {
+            color: #fff;
+      }
+}
+.btn-close {
+      background-color: #fff !important;
+}
+// Hero section
+.hero-section {
+      padding-top: 5rem;
+      .hero-section-content {
+            .hero-section-bread {
+                  overflow: hidden;
+
+                  .section-img {
+                        width: 450px;
+                        rotate: 15deg;
+                  }
+            }
+
+            .social-links {
+                  .location {
+                        span {
+                              font-size: 12px;
+                        }
+                  }
+            }
+      }
+
+      .hero-footer {
+            .social-media-links {
+                  a i {
+                        transition: color 0.4s;
+
+                        &:hover {
+                              color: #7c5101 !important;
+                        }
+                  }
+            }
+      }
+}
+p.description {
+      font-size: 14px;
+      color: #acacac;
+}
+// new-bread-section
+.new-breads-section {
+      .bread {
+            .about-bread {
+                  h3 {
+                        color: #7c5101;
+                        font-family: "Dancing Script", cursive;
+                  }
+            }
+
+            .bread-img {
+                  @media (max-width: 575px) {
+                        width: 180px !important;
+                  }
+            }
+      }
+}
+.bread:nth-child(2n) img {
+      order: -1;
+      padding-bottom: 10px;
+}
+
+// about-us
+.about-us-img img {
+      width: 450px;
+      height: 500px;
+
+      @media (min-width: 475px) and (max-width: 991px) {
+            width: 100%;
+            height: 100%;
+      }
+}
+// favourities-section
+.fav-section {
+      padding: 2rem 0;
+      gap: 5rem 2rem;
+
+      .product-card {
+            background-color: #141414;
+            box-shadow: 0 12px 24px hsla(0%, 0%, 0%, 0.3%);
+            width: calc(230px - 24px);
+            padding: 7.5rem 1.5rem .5rem;
+            border: 2px solid transparent;
+            transition: border .4s;
+
+            img {
+                  width: 160px;
+                  top: -60px;
+                  right: 0;
+                  left: 0;
+                  margin: 0 auto;
+            }
+
+            i {
+                  transition: color 0.4s;
+
+                  &:hover {
+                        color: #fff !important;
+                  }
+            }
+
+            &:hover {
+                  border: 2px solid #7c5101;
+            }
+      }
+
+}
+// footer
+.footer-list {
+      list-style: none;
+      padding-left: 0;
+}
+// visit-us 
+.visit-us {
+      height: 400px;
+
+      .visit-us-data {
+                   @media (max-width: 550px) {
+                        width: 100% !important;
+                  }
+
+      }
+}
+
+
+// Scrollbar
+::-webkit-scrollbar{
+      width: 10px;
+      background-color: hsl(28, 12%, 15%);
+}
+::-webkit-scrollbar-thumb{
+      background-color: hsl(0, 0%, 25%);
+      &:hover{
+            background-color: hsl(28, 12%, 35%);
+      }
+}
+
+
+// Scroll-up
+.scroll-up{
+      position: fixed;
+      right: 30px;
+      bottom: -50%;
+      padding: 20px;
+      z-index: 9;
+      transition: bottom .4s, transform .6s;
+      &:hover{
+            transform: translateY(-.9rem);
+      }
+}
+.show-scroll{
+      bottom: 1rem;
+}
